@@ -78,6 +78,8 @@ Based on the relationship, the code analyzes the data to build the mapping among
 
 2. When a cell of matrix view is selected, the corresponding two documents information will be sent to server. The method **clashedObjectsInTwoDocs** in [analyze.js](./server/analyze.js) will get out all clashes which occur between the two documents, and check the clash objects metadata, finally build records. These records will be pushed to PowerBI data, and refresh PowerBI report accordingly. Check [ReadMe of PowerBI tool](./PowerBITool/PowerBI.md) for more details.
 
+Note: [Power BI REST API limitations](https://docs.microsoft.com/en-us/rest/api/power-bi/pushdatasets/datasets_postrows). e.g. the max rows per single POST rows request. If with huge number of data, split them to chunks and post chunk by chunk.
+
 
 # Setup
 
